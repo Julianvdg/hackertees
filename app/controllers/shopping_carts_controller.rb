@@ -1,4 +1,7 @@
 class ShoppingCartsController < ApplicationController
+  def show
+    @orderlines = cart_order.order_lines
+  end
   def add
     id = params[:id]
     #if the cart has already been created, use the existing cart. Else create a new cart

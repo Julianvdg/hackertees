@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
 root "products#index"
-resources :products, :shopping_carts, :order_items
+resources :products, :shopping_carts, :order_lines
 
 get '/cart' => 'shopping_carts#index'
 get '/cart/clear' => 'shopping_carts#clearCart'
