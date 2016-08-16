@@ -44,7 +44,7 @@ class ShoppingCartsController < ApplicationController
       cart[id] += 1
       redirect_to :action => :index
   end
-  
+
   def index
     #if there is a cart, pass it to the page for display. Else pass an empty value
     if session[:cart] then
@@ -54,4 +54,6 @@ class ShoppingCartsController < ApplicationController
     end
   end
 
+  def checkout
+  end
 end

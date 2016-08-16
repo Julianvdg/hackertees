@@ -4,6 +4,7 @@ resources :products, :shopping_carts, :order_items
 devise_for :users
 
 get '/cart' => 'shopping_carts#index'
+get '/cart/checkout' => 'shopping_carts#checkout'
 get '/cart/clear' => 'shopping_carts#clearCart'
 get '/cart/clearitem/:id' => 'shopping_carts#clearItem'
 get '/cart/decreaseitem/:id' => 'shopping_carts#decreaseItem'
