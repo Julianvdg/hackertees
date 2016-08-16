@@ -31,6 +31,20 @@ class ShoppingCartsController < ApplicationController
       redirect_to :action => :index
   end
 
+  def decreaseItem
+      id = params[:id]
+      cart = session[:cart]
+      cart[id] -= 1
+      redirect_to :action => :index
+  end
+
+  def increaseItem
+      id = params[:id]
+      cart = session[:cart]
+      cart[id] += 1
+      redirect_to :action => :index
+  end
+  
   def index
     #if there is a cart, pass it to the page for display. Else pass an empty value
     if session[:cart] then

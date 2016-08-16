@@ -14,10 +14,15 @@
   <% @cart.each do | id, quantity| %>
     <% product = Product.find_by_id(id) %>
 
-        <p><b>Product:&nbsp;<%= link_to product.name, product %></b>&nbsp;<a href="/cart/clearitem/<%=product.id%>">Remove</a><p>
+        <p><b>Product:&nbsp;<%= link_to product.name, product %></b>
+          <%= link_to image_tag("trash.png" , height: 18), "cart/clearitem/#{product.id}" %>
         <p>Description:&nbsp;<%= product.description %></p>
         <p>Price:&nbsp;<%= number_to_currency(product.price, :unit => "$") %></p>
-        <p>Quantity:&nbsp;<%= quantity %></p>
+        <p>
+          Quantity:&nbsp;<%= quantity %>
+          <%= link_to image_tag("minus.png" , height: 18), "cart/decreaseitem/#{product.id}" %>
+          <%= link_to image_tag("plus.png" , height: 18), "cart/increaseitem/#{product.id}" %>
+        </p>
         <br>
 
     <% total += quantity * product.price %>
