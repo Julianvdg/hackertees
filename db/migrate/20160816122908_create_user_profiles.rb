@@ -7,6 +7,7 @@ class CreateUserProfiles < ActiveRecord::Migration[5.0]
       t.string :city
       t.string :postal_code
       t.string :country
+      t.references :user, foreign_key: true
 
       t.timestamps
     end
