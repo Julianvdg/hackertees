@@ -1,6 +1,6 @@
 <h1>Products#index</h1>
 <% @products.each do |product| %>
-<h2><%= product.name %></h2>
+<h2><%= product.name %></h2><a href="/cart/<%=product.id%>">Add To Cart</a>
 <h4>EUR <%= product.price.round %>,-</h4>
 <p><%= product.description %></p><br>
 <% end %>
