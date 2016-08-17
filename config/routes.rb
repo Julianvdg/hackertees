@@ -11,7 +11,11 @@ get '/cart/clearitem/:id' => 'shopping_carts#clearItem'
 get '/cart/decreaseitem/:id' => 'shopping_carts#decreaseItem'
 get '/cart/increaseitem/:id' => 'shopping_carts#increaseItem'
 get '/cart/checkout' => 'shopping_carts#checkout'
+<<<<<<< c0d9d3d4573e561ce543c152b9f269d501fab16d
 get '/cart/checkout/confirmorder' => 'orders#confirmorder' 
+=======
+get '/cart/checkout/confirmorder' => 'shopping_carts#confirmorder'
+>>>>>>> Add confirmorder route
 get '/cart/:id' => 'shopping_carts#add'
     
     
