@@ -32,30 +32,7 @@
 <p>Total Amount:&nbsp;<b><%= number_to_currency(total, :unit => "$") %></b></p>
 <br><br><br><br>
 
-<<<<<<< c0d9d3d4573e561ce543c152b9f269d501fab16d
-<<<<<<< 9610ce7cc2ac86b6cedf91fbb242afc831a82fcd
-<a href="/cart/checkout">Proceed to Check Out</a>
-<br><br>
-=======
-<% if user_signed_in? %>
-=======
 <a href="/cart/checkout">Proceed to Check Out</a>
 <br><br>
 
-<<<<<<< 250e54d370a9d759dbfa7ff2532427fa082d3bd1
-<!-- <% if user_signed_in? %>
->>>>>>> Add confirmorder route
-  <a href="/cart/checkout">Check Out</a>
-  <br><br>
-<% else %>
-  <a href="/users/sign_in">Please sign in to proceed to check out</a>
-<<<<<<< c0d9d3d4573e561ce543c152b9f269d501fab16d
-<% end %>
->>>>>>> Remove checkout link when not logged in
-=======
-<% end %> -->
->>>>>>> Add confirmorder route
-
-=======
->>>>>>> Add confirm_order viewtemplate Add user login check to checkout page
 <%= session[:cart] %>

@@ -1,8 +1,4 @@
 class OrdersController < ApplicationController
-<<<<<<< 250e54d370a9d759dbfa7ff2532427fa082d3bd1
-<<<<<<< 52a553c0bd3f6c8c04b1beadbf5e9c09d5ec0cee
-=======
->>>>>>> Add confirm_order viewtemplate Add user login check to checkout page
   def confirmorder
     #get session cart data and store it in an instance variable
     @cart = session[:cart]
@@ -26,9 +22,4 @@ class OrdersController < ApplicationController
       #clear the shoppingcart
       session[:cart] = nil
   end
-<<<<<<< 250e54d370a9d759dbfa7ff2532427fa082d3bd1
-=======
->>>>>>> Generate orders_controller
-=======
->>>>>>> Add confirm_order viewtemplate Add user login check to checkout page
 end
