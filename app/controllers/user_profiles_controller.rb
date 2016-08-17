@@ -1,11 +1,6 @@
 class UserProfilesController < ApplicationController
     def new
         @user_profile = UserProfile.new
-        if current_user.user_profile.blank?
-            render 'new'
-        else
-            render 'edit'
-        end
     end
     
     
