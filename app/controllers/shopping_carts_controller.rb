@@ -54,7 +54,7 @@ class ShoppingCartsController < ApplicationController
     end
   end
 
-  def checkout
-  end
+def checkout
+end
 
 end
