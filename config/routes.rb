@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
+  get 'user_profiles/new'
+
 root "products#index"
-resources :products, :shopping_carts, :order_items
+resources :products, :shopping_carts, :order_items, :user_profiles
 devise_for :users
 
 get '/cart' => 'shopping_carts#index'
@@ -10,7 +12,12 @@ get '/cart/decreaseitem/:id' => 'shopping_carts#decreaseItem'
 get '/cart/increaseitem/:id' => 'shopping_carts#increaseItem'
 get '/cart/checkout' => 'shopping_carts#checkout'
 get '/cart/:id' => 'shopping_carts#add'
+    
+    
+get 'userprofile/new' => 'user_profiles#new'
+post 'userprofile' => 'user_profiles#create'
 
 
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+
 end
