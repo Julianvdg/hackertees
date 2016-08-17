@@ -55,6 +55,7 @@ class ShoppingCartsController < ApplicationController
   end
 
   def checkout
+<<<<<<< 9f98f783986062a9efc2a8aed509ef8f2882d5ef
 <<<<<<< 250e54d370a9d759dbfa7ff2532427fa082d3bd1
 =======
     # #get session cart data and store it in an instance variable
@@ -79,6 +80,8 @@ class ShoppingCartsController < ApplicationController
     #   #clear the shoppingcart
     #   session[:cart] = nil
 >>>>>>> Add confirm_order viewtemplate Add user login check to checkout page
+=======
+>>>>>>> Remove order_from cart logic from shoppingcarts controller
   end
 
 end
