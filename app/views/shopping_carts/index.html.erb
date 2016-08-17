@@ -39,6 +39,8 @@
 <% if user_signed_in? %>
   <a href="/cart/checkout">Check Out</a>
   <br><br>
+<% else %>
+  <a href="/users/sign_in">Please sign in to proceed to check out</a>
 <% end %>
 >>>>>>> Remove checkout link when not logged in
 
