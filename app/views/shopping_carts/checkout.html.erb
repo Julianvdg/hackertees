@@ -1,1 +1,8 @@
-<h1>checked out!</h1>
+<h1>Checkout</h1>
+
+<% if user_signed_in? %>
+  <a href="/cart/checkout/confirmorder">Confirm this Order!</a>
+  <br><br>
+<% else %>
+  <a href="/users/sign_in">Please log in to confirm your order</a>
+<% end %>
