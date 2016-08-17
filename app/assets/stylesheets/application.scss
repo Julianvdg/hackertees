@@ -16,3 +16,19 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+.carousel-inner > .item > img{
+       height:460px;
+       text-align: center;
+       margin: auto;
+     }
+
+.all_shirts {
+  margin-top: 10%;
+}
+
+.panel-body {
+  background-repeat:no-repeat;
+  background-position: center center;
+  background-size: contain;
+}

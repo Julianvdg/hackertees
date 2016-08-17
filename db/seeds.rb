@@ -11,7 +11,7 @@ User.delete_all
 
 products = [
   { name: "Tshirt 1", description: "One helluva Tee", price: 10, product_image: "/assets/shirts/tshirt_1.png", in_stock: true},
-  { name: "Tshirt 2", description: "This is a great T-shirt", price: 12, product_image: "/assets/shirt/tshirt_2.png", in_stock: true},
+  { name: "Tshirt 2", description: "This is a great T-shirt", price: 12, product_image: "/assets/shirts/tshirt_2.png", in_stock: true},
   { name: "Tshirt 3", description: "A very nice T-shirt", price: 14, product_image: "/assets/shirts/tshirt_3.png", in_stock: true},
   { name: "Tshirt 4", description: "This is a great T-shirt", price: 12, product_image: "/assets/shirts/tshirt_4.png", in_stock: true},
   { name: "Tshirt 5", description: "This is a great T-shirt", price: 12, product_image: "/assets/shirts/tshirt_5.png", in_stock: true},
