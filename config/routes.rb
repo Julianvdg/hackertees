@@ -12,8 +12,6 @@ get '/cart/decreaseitem/:id' => 'shopping_carts#decreaseItem'
 get '/cart/increaseitem/:id' => 'shopping_carts#increaseItem'
 get '/cart/checkout' => 'shopping_carts#checkout'
 get '/cart/checkout/confirmorder' => 'orders#confirmorder'
-get '/cart/checkout/confirmorder' => 'shopping_carts#confirmorder'
-get '/cart/checkout/confirmorder' => 'orders#confirmorder'
 get '/cart/:id' => 'shopping_carts#add'
 
 
