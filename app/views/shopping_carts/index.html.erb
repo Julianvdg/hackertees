@@ -14,7 +14,7 @@
   <% @cart.each do | id, quantity| %>
     <% product = Product.find_by_id(id) %>
 
-        <p><b>Product:&nbsp;<%= link_to product.name, product %></b>
+        <p><b>Product:&nbsp;<%= link_to product.name, product %></b><p>
           <%= link_to image_tag("trash.png" , height: 18), "cart/clearitem/#{product.id}" %>
         <p>Description:&nbsp;<%= product.description %></p>
         <p>Price:&nbsp;<%= number_to_currency(product.price, :unit => "$") %></p>
@@ -30,5 +30,7 @@
 </ul>
 
 <p>Total Amount:&nbsp;<b><%= number_to_currency(total, :unit => "$") %></b></p>
-<br><br><br><br><br><br>
+<br><br><br><br>
+<a href="/cart/checkout">Check Out</a>
+<br><br>
 <%= session[:cart] %>

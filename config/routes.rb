@@ -8,6 +8,7 @@ get '/cart/clear' => 'shopping_carts#clearCart'
 get '/cart/clearitem/:id' => 'shopping_carts#clearItem'
 get '/cart/decreaseitem/:id' => 'shopping_carts#decreaseItem'
 get '/cart/increaseitem/:id' => 'shopping_carts#increaseItem'
+get '/cart/checkout' => 'shopping_carts#checkout'
 get '/cart/:id' => 'shopping_carts#add'
 
 
