@@ -1,4 +1,5 @@
 class OrdersController < ApplicationController
+<<<<<<< 52a553c0bd3f6c8c04b1beadbf5e9c09d5ec0cee
   def confirmorder
     #get session cart data and store it in an instance variable
     @cart = session[:cart]
@@ -22,4 +23,6 @@ class OrdersController < ApplicationController
       #clear the shoppingcart
       session[:cart] = nil
   end
+=======
+>>>>>>> Generate orders_controller
 end
