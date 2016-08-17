@@ -11,11 +11,15 @@ get '/cart/clearitem/:id' => 'shopping_carts#clearItem'
 get '/cart/decreaseitem/:id' => 'shopping_carts#decreaseItem'
 get '/cart/increaseitem/:id' => 'shopping_carts#increaseItem'
 get '/cart/checkout' => 'shopping_carts#checkout'
+<<<<<<< 250e54d370a9d759dbfa7ff2532427fa082d3bd1
 <<<<<<< c0d9d3d4573e561ce543c152b9f269d501fab16d
 get '/cart/checkout/confirmorder' => 'orders#confirmorder' 
 =======
 get '/cart/checkout/confirmorder' => 'shopping_carts#confirmorder'
 >>>>>>> Add confirmorder route
+=======
+get '/cart/checkout/confirmorder' => 'orders#confirmorder' 
+>>>>>>> Add confirm_order viewtemplate Add user login check to checkout page
 get '/cart/:id' => 'shopping_carts#add'
     
     
