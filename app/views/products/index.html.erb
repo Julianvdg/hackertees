@@ -55,7 +55,7 @@
       <div class="panel panel-default">
         <%= link_to prod do %>
           <div class="panel-body" style="background-image:url('<%= prod.product_image %>'); height: 200px;"></div>
-         <div class="panel-footer">Price: €<%= prod.price %></div>
+         <div class="panel-footer">Price: €<%= prod.price %><a href="/cart/<%=prod.id%>" class="rightlink">Add To Cart</a></div>
          <% end %>
 
       </div>
