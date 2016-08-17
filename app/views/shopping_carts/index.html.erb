@@ -32,7 +32,14 @@
 <p>Total Amount:&nbsp;<b><%= number_to_currency(total, :unit => "$") %></b></p>
 <br><br><br><br>
 
+<<<<<<< 9610ce7cc2ac86b6cedf91fbb242afc831a82fcd
 <a href="/cart/checkout">Proceed to Check Out</a>
 <br><br>
+=======
+<% if user_signed_in? %>
+  <a href="/cart/checkout">Check Out</a>
+  <br><br>
+<% end %>
+>>>>>>> Remove checkout link when not logged in
 
 <%= session[:cart] %>
