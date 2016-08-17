@@ -44,7 +44,7 @@ class ShoppingCartsController < ApplicationController
       cart[id] += 1
       redirect_to :action => :index
   end
-  
+
   def index
     #if there is a cart, pass it to the page for display. Else pass an empty value
     if session[:cart] then
@@ -52,6 +52,20 @@ class ShoppingCartsController < ApplicationController
     else
       @cart = {}
     end
+  end
+
+  def checkout
+    @cart = session[:cart]
+    checkout = Order.create
+    checkout.total_price = 0
+      @cart.each do | id, quantity|
+        item = Product.find(id)
+        subtotal = quantity.to_i * item.price.to_i
+        OrderLine.create(:quantity => quantity, :unit_price => item.price, :sub_total => subtotal, :order_id  => checkout.id, :product_id  => id)
+        update_price = (checkout.total_price += subtotal)
+        Order.update(:total_price => update_price)
+      end
+      session[:cart] = nil
   end
 
 end
