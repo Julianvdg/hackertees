@@ -8,12 +8,17 @@
 
 <br><br><br>
 
+
+   <div class="notice"><%= flash[:notice] %></div>
+
 <% total = 0 %>
 
 <ul>
   <% @cart.each do | id, quantity| %>
     <% product = Product.find_by_id(id) %>
-      <div id="item-<%=product.id%>"
+      <div id="item-<%=product.id%>">
+
+
           <p><b>Product:&nbsp;<%= link_to product.name, product %></b><p>
             <%= link_to image_tag("trash.png" , height: 18), "", :onclick => "deleteItem(#{product.id}, -1); return false" %>
           <p>Description:&nbsp;<%= product.description %></p>
@@ -30,7 +35,7 @@
   <% end %>
 </ul>
 
-<p>Total Amount:&nbsp;<b><span id="total"><%= total %></b></span></p>
+<p>Total Amount:&nbsp;<b>$<span id="total"><%= total %></b></span></p>
 <br><br><br><br>
 
 <a href="/cart/checkout">Proceed to Check Out</a>
