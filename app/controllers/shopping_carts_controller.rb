@@ -31,18 +31,12 @@ class ShoppingCartsController < ApplicationController
       redirect_to :action => :index
   end
 
-  def decreaseItem
-      id = params[:id]
-      cart = session[:cart]
-      cart[id] -= 1
-      redirect_to :action => :index
-  end
-
-  def increaseItem
-      id = params[:id]
-      cart = session[:cart]
-      cart[id] += 1
-      redirect_to :action => :index
+  def change_quantity
+    id = params[:id]
+    quantity = params[:quantity]
+    cart = session[:cart]
+    cart[id] += quantity.to_i
+    @amount = cart[id]
   end
 
   def index

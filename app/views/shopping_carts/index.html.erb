@@ -19,9 +19,9 @@
         <p>Description:&nbsp;<%= product.description %></p>
         <p>Price:&nbsp;<%= number_to_currency(product.price, :unit => "$") %></p>
         <p>
-          Quantity:&nbsp;<%= quantity %>
-          <%= link_to image_tag("minus.png" , height: 18), "cart/decreaseitem/#{product.id}" %>
-          <%= link_to image_tag("plus.png" , height: 18), "cart/increaseitem/#{product.id}" %>
+          Quantity:&nbsp;<span id="quantity"><%= quantity %></span>
+          <%= link_to image_tag("minus.png" , height: 18), "", :onclick => "updateQuantity(#{product.id}, -1); return false" %>
+          <%= link_to image_tag("plus.png" , height: 18), "", :onclick => "updateQuantity(#{product.id}, 1); return false" %>
         </p>
         <br>
 
