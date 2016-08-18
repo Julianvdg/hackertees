@@ -5,11 +5,7 @@ class ProductsController < ApplicationController
   def index
     @products = Product.where("stock > 0")
     #if there is a cart, pass it to the page for display. Else pass an empty value
-    if session[:cart] then
-      @cart = session[:cart]
-    else
-      @cart = {}
-    end
+    
   end
 
   def new
