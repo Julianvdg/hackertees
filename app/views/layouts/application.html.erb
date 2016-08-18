@@ -10,6 +10,10 @@
 
   <body>
     <%= render "layouts/header" %>
+    <% if current_page?(root_path) %>
+           <%= render "layouts/slider" %>
+       <% end %>
+    <%= render "layouts/cart" %>
   <main class="container" >
     <%= yield %>
   </main>
