@@ -9,3 +9,14 @@ function updateQuantity(id, quantity = 1){
     }
   });
 }
+
+function deleteItem(id){
+  $.ajax({url: '/cart/delete_item/' + id,
+    error:function(data){
+      console.error(data);
+    },
+    success:function(data){
+      console.log(data);
+    }
+  });
+}
