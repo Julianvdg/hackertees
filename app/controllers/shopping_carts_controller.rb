@@ -43,10 +43,14 @@ class ShoppingCartsController < ApplicationController
     quantity = params[:quantity]
     cart = session[:cart]
     cart[id] += quantity.to_i
-    cart[id] = 1 if cart[id] < 1 
+    cart[id] = 1 if cart[id] < 1
+
+    cart[id] -= 1 if cart[id] > Product.find(id).stock
+
     @amount = cart[id]
     @prod_id = id
   end
+
 
   def index
     #if there is a cart, pass it to the page for display. Else pass an empty value
