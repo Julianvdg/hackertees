@@ -43,6 +43,7 @@ class ShoppingCartsController < ApplicationController
     quantity = params[:quantity]
     cart = session[:cart]
     cart[id] += quantity.to_i
+    cart[id] = 1 if cart[id] < 1 
     @amount = cart[id]
     @prod_id = id
   end
