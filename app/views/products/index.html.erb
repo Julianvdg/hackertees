@@ -1,61 +1,16 @@
-<div class="container-fluid">
-  <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-    <!-- Indicators -->
-    <ol class="carousel-indicators">
-      <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-      <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-      <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-      <li data-target="#carousel-example-generic" data-slide-to="3"></li>
-      <li data-target="#carousel-example-generic" data-slide-to="4"></li>
-      <li data-target="#carousel-example-generic" data-slide-to="5"></li>
-      <li data-target="#carousel-example-generic" data-slide-to="6"></li>
-      <li data-target="#carousel-example-generic" data-slide-to="7"></li>
-      <li data-target="#carousel-example-generic" data-slide-to="8"></li>
-      <li data-target="#carousel-example-generic" data-slide-to="9"></li>
-    </ol>
-
-    <!-- Wrapper for slides -->
-    <div class="carousel-inner">
-
-      <!-- <div class="item active">
-            <img src="http://placehold.it/1200x315" alt="...">
-            <div class="carousel-caption">
-            	<h3>Caption Text</h3>
-            </div>
-          </div> -->
-
-      <% @products.each_with_index do |info, index| %>
-      <div class="item <%='active' if index == 0%>">
-        <img src="<%=info.product_image%>" height="400px" alt="...">
-        <div class="carousel-caption">
-        	<h3><%=info.description%>  </h3>
-        </div>
-      </div>
-      <% end %>
-
-    </div>
-
-    <!-- Controls -->
-    <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-      <span class="glyphicon glyphicon-chevron-left"></span>
-    </a>
-    <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-      <span class="glyphicon glyphicon-chevron-right"></span>
-    </a>
-  </div>
-</div>
-
-<div class="all_shirts"
+<div class="all_shirts">
 
 
 
 
-  <% @products.first(10).each do |prod| %>
+  <% @products.first(9).each do |prod| %>
   <div class="col-md-4 col-sm-6 text-center">
       <div class="panel panel-default">
         <%= link_to prod do %>
           <div class="panel-body" style="background-image:url('<%= prod.product_image %>'); height: 200px;"></div>
-         <div class="panel-footer">Price: €<%= prod.price %><a href="/cart/<%=prod.id%>" class="rightlink">Add To Cart</a></div>
+         <div class="panel-footer"><p>Price: €<%= prod.price %></p>
+             <a href="/cart/<%=prod.id%>" class="text-center btn btn-primary">Add To Cart</a>
+        </div>
          <% end %>
 
       </div>
