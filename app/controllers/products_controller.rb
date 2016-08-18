@@ -14,6 +14,12 @@ class ProductsController < ApplicationController
   end
 
   def edit
+    if current_user.admin?
+
+    else
+      flash[:notice] = "You are not authorized"
+      redirect_to root_path
+    end
   end
 
   def create
