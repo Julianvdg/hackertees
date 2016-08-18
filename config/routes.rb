@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'user_profiles/new'
 
 root "products#index"
 resources :products, :shopping_carts, :order_items, :user_profiles
@@ -12,9 +11,6 @@ get '/cart/change_quantity/:id' => 'shopping_carts#change_quantity'
 get '/cart/checkout' => 'shopping_carts#checkout'
 get '/cart/checkout/confirmorder' => 'orders#confirmorder'
 get '/cart/:id' => 'shopping_carts#add'
-
-
-get 'userprofile/new' => 'user_profiles#new'
-post 'userprofile' => 'user_profiles#create'
+get 'user_profiles/new'
 
 end
