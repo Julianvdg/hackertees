@@ -29,7 +29,7 @@ end
 users = [
   {email: 'timmo@test.com', password: 'abcd1234'},
   {email: 'christiaan@test.com', password: 'abcd1234'},
-  {email: 'rein@test.com', password: 'abcd1234'},
+  {email: 'rein@test.com', password: 'abcd1234', admin: true},
   {email: 'julian@test.com', password: 'abcd1234'}
 ]
 

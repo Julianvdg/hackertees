@@ -7,6 +7,7 @@ class ProductsController < ApplicationController
   end
 
   def new
+    validate_admin
     @product = Product.new
   end
 
@@ -14,10 +15,11 @@ class ProductsController < ApplicationController
   end
 
   def edit
+    validate_admin
   end
 
   def create
-
+    validate_admin
     @product = Product.new(product_params)
 
     respond_to do |format|
@@ -39,5 +41,13 @@ private
 
   def product_params
     params.require(:product).permit(:name, :description, :price, :product_image, :stock)
+  end
+  
+  def validate_admin
+    if current_user.admin?
+    else
+      flash[:notice] = "You are not authorized"
+      redirect_to root_path
+    end
   end
 end
