@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-RSpec.describe "user_profiles/new", type: :view do
+RSpec.describe "user_profiles/edit", type: :view do
   before(:each) do
-    assign(:user_profile, UserProfile.new(
+    @user_profile = assign(:user_profile, UserProfile.create!(
       :first_name => "MyString",
       :last_name => "MyString",
       :address => "MyString",
@@ -13,10 +13,10 @@ RSpec.describe "user_profiles/new", type: :view do
     ))
   end
 
-  it "renders new user_profile form" do
+  it "renders the edit user_profile form" do
     render
 
-    assert_select "form[action=?][method=?]", user_profiles_path, "post" do
+    assert_select "form[action=?][method=?]", user_profile_path(@user_profile), "post" do
 
       assert_select "input#user_profile_first_name[name=?]", "user_profile[first_name]"
 
