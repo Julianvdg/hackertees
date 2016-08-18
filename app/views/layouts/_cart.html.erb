@@ -1,4 +1,5 @@
 <% total = 0 %>
+<% total_items = 0 %>
 
 <div id="wrapper">
     <div class="cart-tab visible">
@@ -6,7 +7,7 @@
             <h2>Cart</h2>
             <% if @cart.empty?%>
             <p>Your cart is currently empty</p>
-        <% else%>
+            <% else%>
             <%= link_to "Empty Cart", cart_clear_path %>
             <%end %>
 
@@ -33,6 +34,7 @@
                         </div>
 
                         <% total += quantity * product.price %>
+                        <% total_items += quantity %>
                         <% end %>
                     </ul>
 
@@ -45,7 +47,7 @@
 
                 <a href="#" title="View your shopping cart" class="cart-link">
                     <span class="amount">$<span id="total"><%= total %></span></span>
-                    <span class="contents">2 items</span>
+                    <span class="contents"><%= total_items %></span>
                 </a>
     </div>
 
