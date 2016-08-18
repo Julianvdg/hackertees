@@ -2,6 +2,7 @@ class Order < ApplicationRecord
   has_many :order_lines
   has_many :products, :through => :order_lines
   belongs_to :user
+  before_save :before_save
 
   def total_price
     total = 0.0
@@ -14,5 +15,5 @@ class Order < ApplicationRecord
   def before_save
     self[:total_price] = total_price
   end
-  
+
 end
