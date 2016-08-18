@@ -14,7 +14,11 @@ class UserProfilesController < ApplicationController
 
   # GET /user_profiles/new
   def new
+    if current_user.user_profile
+    redirect_to edit_user_profile_path(current_user.user_profile)
+    else
     @user_profile = UserProfile.new
+    end
   end
 
   # GET /user_profiles/1/edit
