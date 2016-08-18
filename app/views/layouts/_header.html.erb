@@ -4,6 +4,7 @@
       <%= link_to "Hackertees", '/', class: "navbar-brand" %>
     </div>
     <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to "Shoppingcart", cart_path %></li>
       <% if !user_signed_in? %>
         <li><%= link_to "Log In", new_user_session_path %></li>
       <% else %>
