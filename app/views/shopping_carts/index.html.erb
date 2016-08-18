@@ -17,9 +17,9 @@
         <p><b>Product:&nbsp;<%= link_to product.name, product %></b><p>
           <%= link_to image_tag("trash.png" , height: 18), "cart/clearitem/#{product.id}" %>
         <p>Description:&nbsp;<%= product.description %></p>
-        <p>Price:&nbsp;<%= number_to_currency(product.price, :unit => "$") %></p>
+        <p>Price:&nbsp;$<span id="subtotal"><%= product.price %></span></p>
         <p>
-          Quantity:&nbsp;<span id="quantity"><%= quantity %></span>
+          Quantity:&nbsp;<span id="quantity-<%=product.id%>"><%= quantity %></span>
           <%= link_to image_tag("minus.png" , height: 18), "", :onclick => "updateQuantity(#{product.id}, -1); return false" %>
           <%= link_to image_tag("plus.png" , height: 18), "", :onclick => "updateQuantity(#{product.id}, 1); return false" %>
         </p>
@@ -29,7 +29,7 @@
   <% end %>
 </ul>
 
-<p>Total Amount:&nbsp;<b><%= number_to_currency(total, :unit => "$") %></b></p>
+<p>Total Amount:&nbsp;<b><span id="total"><%= total %></b></span></p>
 <br><br><br><br>
 
 <a href="/cart/checkout">Proceed to Check Out</a>
