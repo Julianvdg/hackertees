@@ -1,1 +1,14 @@
-$('#quantity').html(<%= @amount %>);
+
+$("#quantity-" + <%= @prod_id %>).html(<%= @amount %>);
+
+<% @cart =session[:cart] %>
+<% total = 0 %>
+<% @cart.each do | id, quantity| %>
+  <% product = Product.find_by_id(id) %>
+
+      <% product.price %>
+      <% quantity %>
+  <% total += quantity * product.price %>
+    <% end %>
+
+$("#total").html(<%=total%>);

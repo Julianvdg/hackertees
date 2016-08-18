@@ -37,6 +37,7 @@ class ShoppingCartsController < ApplicationController
     cart = session[:cart]
     cart[id] += quantity.to_i
     @amount = cart[id]
+    @prod_id = id
   end
 
   def index
