@@ -31,6 +31,13 @@ class ShoppingCartsController < ApplicationController
       redirect_to :action => :index
   end
 
+  def deleteItem
+      id = params[:id]
+      cart = session[:cart]
+      cart.delete(id)
+      @prod_id = id
+  end
+
   def change_quantity
     id = params[:id]
     quantity = params[:quantity]
