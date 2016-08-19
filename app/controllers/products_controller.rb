@@ -4,6 +4,8 @@ class ProductsController < ApplicationController
 
   def index
     @products = Product.where("stock > 0")
+    #if there is a cart, pass it to the page for display. Else pass an empty value
+    
   end
 
   def new
@@ -42,7 +44,7 @@ private
   def product_params
     params.require(:product).permit(:name, :description, :price, :product_image, :stock)
   end
-  
+
   def validate_admin
     if current_user.admin?
     else

@@ -1,29 +1,54 @@
+<% total = 0 %>
+<% total_items = 0 %>
+
 <div id="wrapper">
-  <div class="cart-tab visible">		
-    <a href="#" title="View your shopping cart" class="cart-link">
-      <span class="amount">$22.00</span>
-      <span class="contents">2 items</span>
-    </a>
-    <div class="cart">
-      <h2>Cart</h2>
-      <div class="cart-items">
-        <ul>
-          <li class="clearfix">
-            <img src="img/dark-clean-hoodie.jpg" class="productimg">
-            <h4>Dark Hoodie</h4>
-            <span class="item-price">$11.00</span>
-            <span class="quantity">Quantity: 1</span>
-          </li>
- 
-          <li class="clearfix">
-            <img src="img/spongebob-nike-shoes.jpg" class="productimg">
-            <h4>SpongeBob Shoes</h4>
-            <span class="item-price">$11.00</span>
-            <span class="quantity">Quantity: 1</span>
-          </li>
-        </ul>
-      </div><!-- @end .cart-items -->
- 
-      <a href="#" class="checkout">Go To Checkout →</a>
-    </div><!-- @end .cart -->
-  </div><!-- @end .cart-tab -->
+    <div class="cart-tab visible">
+        <div class="cart">
+            <h2>Cart</h2>
+            <% if @cart.empty?%>
+            <p>Your cart is currently empty</p>
+            <% else%>
+            <%= link_to "Empty Cart", cart_clear_path %>
+            <%end %>
+
+            <br><br><br>
+            <div class="notice"><%= flash[:notice] %></div>
+            <ul>
+                <% @cart.each do | id, quantity| %>
+                <% product = Product.find_by_id(id) %>
+                <div id="item-<%=product.id%>">
+
+                    <p>
+                        <b>Product:&nbsp;<%= link_to product.name, product %></b>
+                        <p>
+                            <%= link_to image_tag("trash.png" , height: 18), "", :onclick => "deleteItem(#{product.id}, -1); return false" %>
+                            <p>Description:&nbsp;<%= product.description %></p>
+                            <p>Price:&nbsp;$<span id="subtotal"><%= product.price %></span>
+                            </p>
+                            <p>
+                                Quantity:&nbsp;<span id="quantity-<%=product.id%>"><%= quantity %></span>
+                                <%= link_to image_tag("minus.png" , height: 18), "", :onclick => "updateQuantity(#{product.id}, -1); return false" %>
+                                <%= link_to image_tag("plus.png" , height: 18), "", :onclick => "updateQuantity(#{product.id}, 1); return false" %>
+                            </p>
+                            <br>
+                        </div>
+
+                        <% total += quantity * product.price %>
+                        <% total_items += quantity %>
+                        <% end %>
+                    </ul>
+
+
+
+                    <a href="/cart/checkout">Proceed to Check Out</a>
+                    <br><br>
+                    <a href="/cart/checkout" class="checkout">Go To Checkout →</a>
+                </div>
+
+                <a href="#" title="View your shopping cart" class="cart-link">
+                    <span class="amount">$<span id="total"><%= total %></span></span>
+                    <span class="contents"><%= total_items %></span>
+                </a>
+    </div>
+
+</div>
