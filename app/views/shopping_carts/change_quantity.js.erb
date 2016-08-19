@@ -9,6 +9,11 @@ $("#quantity-" + <%= @prod_id %>).html(<%= @amount %>);
     <% product = Product.find_by_id(id) %>
     <% total += quantity * product.price %>
     <% totalsum += quantity %>
+    <% if quantity >= Product.find(id).stock %>
+      $("#hide").removeClass( "hidden" )
+    <% else %>
+      $("#hide").addClass( "hidden" )
+      <%end%>
   <% end %>
 
 
