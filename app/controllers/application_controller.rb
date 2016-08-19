@@ -9,4 +9,8 @@ class ApplicationController < ActionController::Base
       @cart = {}
     end
   end
+
+  def set_euro(integer)
+    number_to_currency(integer, :locale => :fr)
+  end
 end

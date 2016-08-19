@@ -1,5 +1,6 @@
 <h1>Order from <%=@order.created_at.strftime('%m-%d-%Y') %></h1>
-<table>
+<br>
+<table class ="table">
   <tr>
     <th>Product</th>
     <th>Unit Price</th>
@@ -8,11 +9,12 @@
   </tr>
   <% @order.order_lines.each do |line|  %>
   <tr>
-    <td><%= line.product.name %></td>
+    <td><%= link_to line.product.name, product_path(line.product) %></td>
     <td><%= number_to_currency(line[:unit_price], :locale => :fr)%></td>
     <td><%= line[:quantity] %></td>
     <td><%= number_to_currency(line[:sub_total], :locale => :fr)%></td>
   </tr>
 <% end %>
 </table>
+<br>
 <p><b>Sub total: <%=number_to_currency(@order.total_price, :locale => :fr)%></b></p>

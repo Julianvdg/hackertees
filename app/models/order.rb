@@ -16,4 +16,8 @@ class Order < ApplicationRecord
     self[:total_price] = total_price
   end
 
+  def currency(price)
+    number_to_currency(price, :locale => :fr)
+  end
+
 end
