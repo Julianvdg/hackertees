@@ -1,4 +1,4 @@
-function updateQuantity(id, quantity = 1){
+function updateQuantity(id, quantity ){
   $.ajax({url: '/cart/change_quantity/' + id,
     data: {quantity: quantity},
     error:function(data){
