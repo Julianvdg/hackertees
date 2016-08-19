@@ -28,6 +28,9 @@
                             </p>
                             <hr>
                         </div>
+                        <% if quantity > 0 %>
+                    <a href="/cart/checkout" class="btn btn-primary"> Checkout</a>
+                    <% end %>
 
                         <% total += quantity * product.price %>
                         <% total_items += quantity %>
@@ -38,7 +41,7 @@
                         <% else%>
                         <%= link_to "Empty Cart", cart_clear_path, class: "btn btn-primary" %>
                     <%end %>
-                    <a href="/cart/checkout" class="btn btn-primary"> Checkout</a>
+                    
                 </div>
 
                 <a href="#" title="View your shopping cart" class="cart-link">
