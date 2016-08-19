@@ -3,41 +3,42 @@
 
 <div id="wrapper">
     <div class="cart-tab visible">
-        <div class="cart">
-            <h2>Cart</h2>
-            <% if @cart.empty?%>
-            <p>Your cart is currently empty</p>
-            <% else%>
-            <%= link_to "Empty Cart", cart_clear_path %>
-            <%end %>
+        <div class="cart text-center">
+            <h2>My Shopping Cart</h2>
+
 
             <br><br><br>
             <div class="notice"><%= flash[:notice] %></div>
-            <ul>
+          
                 <% @cart.each do | id, quantity| %>
                 <% product = Product.find_by_id(id) %>
                 <div id="item-<%=product.id%>">
 
                     <p>
+                       <img src="<%=product.product_image%>" class="img-rounded" alt="T-shirt" height="50px">
                         <b>Product:&nbsp;<%= link_to product.name, product %></b>
+                        <%= link_to image_tag("trash.png" , height: 18), "", :onclick => "deleteItem(#{product.id}, -1); return false" %>
+                        
                         <p>
-                            <%= link_to image_tag("trash.png" , height: 18), "", :onclick => "deleteItem(#{product.id}, -1); return false" %>
-                            <p>Description:&nbsp;<%= product.description %></p>
-                            <p>Price:&nbsp;$<span id="subtotal"><%= product.price %></span>
-                            </p>
-                            <p>
+                            
+                            <p>Price:&nbsp;$<span id="subtotal"><%= product.price %>&nbsp;|</span>
                                 Quantity:&nbsp;<span id="quantity-<%=product.id%>"><%= quantity %></span>
                                 <%= link_to image_tag("minus.png" , height: 18), "", :onclick => "updateQuantity(#{product.id}, -1); return false" %>
                                 <%= link_to image_tag("plus.png" , height: 18), "", :onclick => "updateQuantity(#{product.id}, 1); return false" %>
                             </p>
-                            <br>
+                            <hr>
                         </div>
 
                         <% total += quantity * product.price %>
                         <% total_items += quantity %>
                         <% end %>
-                    </ul>
-                    <a href="/cart/checkout" class="checkout">Go To Checkout →</a>
+                    
+                    <% if @cart.empty?%>
+                        <p>Your cart is currently empty</p>
+                        <% else%>
+                        <%= link_to "Empty Cart", cart_clear_path, class: "btn btn-primary" %>
+                    <%end %>
+                    <a href="/cart/checkout" class="btn btn-primary"> Checkout</a>
                 </div>
 
                 <a href="#" title="View your shopping cart" class="cart-link">
