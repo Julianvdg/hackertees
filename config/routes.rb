@@ -14,5 +14,6 @@ get '/cart/checkout/confirmorder' => 'orders#confirmorder'
 get '/cart/:id' => 'shopping_carts#add'
 get 'user_profiles/new'
 get 'order_history' => 'user_profiles#order_history'
+get 'orders/:id' => 'orders#show'
 
 end
