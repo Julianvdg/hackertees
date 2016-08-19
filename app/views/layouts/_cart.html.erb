@@ -37,17 +37,12 @@
                         <% total_items += quantity %>
                         <% end %>
                     </ul>
-
-
-
-                    <a href="/cart/checkout">Proceed to Check Out</a>
-                    <br><br>
                     <a href="/cart/checkout" class="checkout">Go To Checkout →</a>
                 </div>
 
                 <a href="#" title="View your shopping cart" class="cart-link">
                     <span class="amount">$<span id="total"><%= total %></span></span>
-                    <span class="contents"><%= total_items %></span>
+                    <span class="contents"><span id="totalamount"><%= total_items %></span>&nbsp;T-shirt(s)</span>
                 </a>
     </div>
 
