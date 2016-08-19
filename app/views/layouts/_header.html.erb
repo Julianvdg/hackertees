@@ -13,7 +13,11 @@
       <% if !user_signed_in? %>
         <li><%= link_to "Log In", new_user_session_path %></li>
       <% else %>
-        <li><span class="navbar-text"><%= current_user.email %></span></li>
+        <li><span class="navbar-text"><% if current_user.user_profile %>
+          <b>Welcome, <%= current_user.user_profile.first_name %>!&nbsp;&nbsp;</b>
+          <% else %>
+          <%= current_user.email %><% end %></span></li>
+
         <li><%= link_to "My Profile", user_profiles_path %></li>
         <li><%= link_to "My Orders", order_history_path %></li>
         <li><%= link_to "Log Out", destroy_user_session_path, :method => :delete %></li>
