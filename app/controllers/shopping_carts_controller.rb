@@ -16,7 +16,7 @@ class ShoppingCartsController < ApplicationController
         cart[id] = 1
       end
 
-      redirect_to :action => :index
+      redirect_to root_path
   end
 
   def clearCart
