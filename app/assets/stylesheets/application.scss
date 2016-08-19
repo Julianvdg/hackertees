@@ -150,4 +150,16 @@ a.rightlink {
   border-bottom-right-radius: 3px;
 }
 
+.thumbnail img {
+    max-height: 300px;
+}
 
+
+.thumbnail {
+    padding: 0;
+}
+
+.thumbnail .caption-full {
+    padding: 9px;
+    color: #333;
+}
