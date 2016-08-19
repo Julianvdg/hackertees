@@ -5,7 +5,7 @@ class ProductsController < ApplicationController
   def index
     @products = Product.where("stock > 0")
     #if there is a cart, pass it to the page for display. Else pass an empty value
-    
+
   end
 
   def new
@@ -16,7 +16,7 @@ class ProductsController < ApplicationController
   def show
   end
 
-  def edit
+  def update
     validate_admin
   end
 
