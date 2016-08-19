@@ -13,4 +13,8 @@ class OrdersController < ApplicationController
         session[:cart] = nil
   #  end
   end
+
+  def show
+    @order = Order.find(params[:id])
+  end
 end
