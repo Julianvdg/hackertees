@@ -4,7 +4,11 @@ class UserProfilesController < ApplicationController
   # GET /user_profiles
   # GET /user_profiles.json
   def index
-    @user_profiles = UserProfile.all
+    if current_user.user_profile
+    redirect_to edit_user_profile_path(current_user.user_profile)
+    else
+    redirect_to new_user_profile_path
+    end
   end
 
   # GET /user_profiles/1

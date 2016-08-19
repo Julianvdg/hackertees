@@ -1,5 +1,5 @@
 <h1>Order History for <% if current_user.user_profile %>
-  <%=@user.first_name @user.last_name %>
+  <%= @user.first_name %>
 <% else %>
 <%= current_user.email %> </h1>
 <% end %>
