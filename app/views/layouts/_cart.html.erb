@@ -9,7 +9,7 @@
 
             <br><br><br>
             <div class="notice"><%= flash[:notice] %></div>
-          
+
                 <% @cart.each do | id, quantity| %>
                 <% product = Product.find_by_id(id) %>
                 <div id="item-<%=product.id%>">
@@ -18,13 +18,14 @@
                        <img src="<%=product.product_image%>" class="img-rounded" alt="T-shirt" height="50px">
                         <b>Product:&nbsp;<%= link_to product.name, product %></b>
                         <%= link_to image_tag("trash.png" , height: 18), "", :onclick => "deleteItem(#{product.id}, -1); return false" %>
-                        
+
                         <p>
-                            
+
                             <p>Price:&nbsp;$<span id="subtotal"><%= product.price %>&nbsp;|</span>
                                 Quantity:&nbsp;<span id="quantity-<%=product.id%>"><%= quantity %></span>
                                 <%= link_to image_tag("minus.png" , height: 18), "", :onclick => "updateQuantity(#{product.id}, -1); return false" %>
                                 <%= link_to image_tag("plus.png" , height: 18), "", :onclick => "updateQuantity(#{product.id}, 1); return false" %>
+                                <p id="hide" class="hidden" style="color:red">no more stock</p>
                             </p>
                             <hr>
                         </div>
@@ -32,7 +33,7 @@
                         <% total += quantity * product.price %>
                         <% total_items += quantity %>
                         <% end %>
-                    
+
                     <% if @cart.empty?%>
                         <p>Your cart is currently empty</p>
                         <% else%>
