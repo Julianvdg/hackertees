@@ -10,7 +10,7 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "Shoppingcart", cart_path %></li>
+        <!-- <li><%= link_to "Shoppingcart", cart_path %></li> -->
       <% if !user_signed_in? %>
         <li><%= link_to "Log In", new_user_session_path %></li>
       <% else %>
