@@ -1,0 +1,11 @@
+<h1>Order History for <% if current_user.user_profile %>
+  <%=@user.first_name @user.last_name %>
+<% else %>
+<%= current_user.email %> </h1>
+<% end %>
+ORDER DATE - Subtotal
+<% @orders.each do |order| %>
+<p><%= order.created_at.strftime('%d-%m-%Y') %><br>
+  <%= number_to_currency(order.total_price, :locale => :fr) %></p>
+  <br>
+<% end %>

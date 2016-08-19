@@ -13,5 +13,6 @@ get '/cart/checkout' => 'shopping_carts#checkout'
 get '/cart/checkout/confirmorder' => 'orders#confirmorder'
 get '/cart/:id' => 'shopping_carts#add'
 get 'user_profiles/new'
+get 'order_history' => 'user_profiles#order_history'
 
 end

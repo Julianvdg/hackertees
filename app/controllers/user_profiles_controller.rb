@@ -12,6 +12,11 @@ class UserProfilesController < ApplicationController
   def show
   end
 
+  def order_history
+    @user = current_user.user_profile
+    @orders = current_user.orders
+  end
+
   # GET /user_profiles/new
   def new
     if current_user.user_profile
@@ -28,7 +33,7 @@ class UserProfilesController < ApplicationController
   # POST /user_profiles
   # POST /user_profiles.json
   def create
-      
+
     @user_profile = UserProfile.new(user_profile_params)
 
     respond_to do |format|
