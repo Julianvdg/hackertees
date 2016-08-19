@@ -48,8 +48,7 @@
 
 
 <% if user_signed_in? %>
-  <a href="/cart/checkout/confirmorder">Confirm this Order!</a>
-  <br><br>
+  <%= link_to "Confirm this order!", cart_checkout_confirmorder_path, class: "btn btn-primary" %>
 <% else %>
-  <a href="/users/sign_in">Please log in to confirm your order</a>
+  <%= link_to "Please sign in to confirm your order", new_user_session_path, class: "btn btn-primary" %>
 <% end %>
