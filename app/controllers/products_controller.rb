@@ -16,7 +16,7 @@ class ProductsController < ApplicationController
   def show
   end
 
-  def update
+  def edit
     validate_admin
   end
 
@@ -31,6 +31,19 @@ class ProductsController < ApplicationController
       else
         format.html { render :new }
         format.json { render json: @product.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  def update
+    validate_admin
+    respond_to do |format|
+      if @product.update(product_params)
+        format.html { redirect_to @product, notice: 'Product was successfully updated.' }
+        format.json { render :show, status: :ok, location: @user_profile }
+      else
+        format.html { render :edit }
+        format.json { render json: @user_profile.errors, status: :unprocessable_entity }
       end
     end
   end
