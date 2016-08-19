@@ -1,4 +1,35 @@
+
+
 <h1>Checkout</h1>
+
+
+<% total = 0 %>
+<% total_items = 0 %>
+<ul>
+
+    <% @cart.each do | id, quantity| %>
+    <% product = Product.find_by_id(id) %>
+    <div id="item-<%=product.id%>">
+
+        <p>
+            <b>Product:&nbsp;<%= link_to product.name, product %></b>
+            <p>
+                <%= link_to image_tag("trash.png" , height: 18), "", :onclick => "deleteItem(#{product.id}, -1); return false" %>
+                <p>Description:&nbsp;<%= product.description %></p>
+                <p>Price:&nbsp;$<span id="subtotal"><%= product.price %></span>
+                </p>
+                <p>
+                    Quantity:&nbsp;<span id="quantity-<%=product.id%>"><%= quantity %></span>
+                    <%= link_to image_tag("minus.png" , height: 18), "", :onclick => "updateQuantity(#{product.id}, -1); return false" %>
+                    <%= link_to image_tag("plus.png" , height: 18), "", :onclick => "updateQuantity(#{product.id}, 1); return false" %>
+                </p>
+                <br>
+            </div>
+
+            <% total += quantity * product.price %>
+            <% total_items += quantity %>
+            <% end %>
+        </ul>
 
 <% if user_signed_in? %>
   <a href="/cart/checkout/confirmorder">Confirm this Order!</a>

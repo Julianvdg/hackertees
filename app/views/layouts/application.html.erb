@@ -13,7 +13,9 @@
     <% if current_page?(root_path) %>
            <%= render "layouts/slider" %>
        <% end %>
+    <% unless current_page?(cart_checkout_path) %>
     <%= render "layouts/cart" %>
+    <% end %>
   <main class="container" >
     <%= yield %>
   </main>
