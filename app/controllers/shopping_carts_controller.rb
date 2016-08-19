@@ -21,7 +21,7 @@ class ShoppingCartsController < ApplicationController
 
   def clearCart
     session[:cart] = nil
-    redirect_to :action => :index
+    redirect_to root_path
   end
 
   def clearItem
