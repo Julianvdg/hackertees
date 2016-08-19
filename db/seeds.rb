@@ -10,16 +10,16 @@ Product.delete_all
 User.delete_all
 
 products = [
-  { name: "Tshirt 1", description: "One helluva Tee", price: 10, product_image: "/assets/shirts/tshirt_1.png", in_stock: true, stock: 5},
-  { name: "Tshirt 2", description: "This is a great T-shirt", price: 12, product_image: "/assets/shirts/tshirt_2.png", in_stock: true, stock: 5},
-  { name: "Tshirt 3", description: "A very nice T-shirt", price: 14, product_image: "/assets/shirts/tshirt_3.png", in_stock: true, stock: 5},
-  { name: "Tshirt 4", description: "This is a great T-shirt", price: 12, product_image: "/assets/shirts/tshirt_4.png", in_stock: true, stock: 5},
-  { name: "Tshirt 5", description: "This is a great T-shirt", price: 12, product_image: "/assets/shirts/tshirt_5.png", in_stock: true, stock: 5},
-  { name: "Tshirt 6", description: "This is a great T-shirt", price: 12, product_image: "/assets/shirts/tshirt_6.png", in_stock: true, stock: 5},
-  { name: "Tshirt 7", description: "This is a great T-shirt", price: 12, product_image: "/assets/shirts/tshirt_7.png", in_stock: true, stock: 5},
-  { name: "Tshirt 8", description: "This is a great T-shirt", price: 12, product_image: "/assets/shirts/tshirt_8.png", in_stock: true, stock: 5},
-  { name: "Tshirt 9", description: "This is a great T-shirt", price: 12, product_image: "/assets/shirts/tshirt_9.png", in_stock: true, stock: 5},
-  { name: "Tshirt 10", description: "This is a great T-shirt", price: 12, product_image: "/assets/shirts/tshirt_10.png", in_stock: true, stock: 5}
+  { name: "Awesome T-shirt", description: "One helluva Tee", price: 10, product_image: "/assets/shirts/tshirt_1.png", in_stock: true, stock: 5},
+  { name: "Cool T-shirt", description: "This is a great T-shirt", price: 12, product_image: "/assets/shirts/tshirt_2.png", in_stock: true, stock: 5},
+  { name: "TeeTee", description: "A very nice T-shirt", price: 14, product_image: "/assets/shirts/tshirt_3.png", in_stock: true, stock: 5},
+  { name: "TwoTeeee", description: "This is a great T-shirt", price: 12, product_image: "/assets/shirts/tshirt_4.png", in_stock: true, stock: 5},
+  { name: "Banger Tee", description: "This is a great T-shirt", price: 12, product_image: "/assets/shirts/tshirt_5.png", in_stock: true, stock: 5},
+  { name: "Cashic Tee", description: "This is a great T-shirt", price: 12, product_image: "/assets/shirts/tshirt_6.png", in_stock: true, stock: 5},
+  { name: "T-shirt One", description: "This is a great T-shirt", price: 12, product_image: "/assets/shirts/tshirt_7.png", in_stock: true, stock: 5},
+  { name: "Like Shirt", description: "This is a great T-shirt", price: 12, product_image: "/assets/shirts/tshirt_8.png", in_stock: true, stock: 5},
+  { name: "Boom Shirt", description: "This is a great T-shirt", price: 12, product_image: "/assets/shirts/tshirt_9.png", in_stock: true, stock: 5},
+  { name: "T Twice", description: "This is a great T-shirt", price: 12, product_image: "/assets/shirts/tshirt_10.png", in_stock: true, stock: 5}
 ]
 
 products.each do |product|
