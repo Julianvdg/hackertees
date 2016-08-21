@@ -16,10 +16,15 @@ class ShoppingCartsController < ApplicationController
         cart[id] = 1
       end
 
+      id = params[:id]
+      cart = session[:cart]
+      @prod_id = id
+      
       respond_to do |format|
         format.html {redirect_to root_path }
         format.js
       end
+
   end
 
   def clearCart
