@@ -9,7 +9,9 @@
         <%= link_to prod do %>
           <div class="panel-body" style="background-image:url('<%= prod.product_image %>'); height: 200px;"></div>
          <div class="panel-footer"><p><%= number_to_currency(prod.price, :locale => :fr)%></p>
-             <a href="/cart/<%=prod.id%>" class="text-center btn btn-primary">Add To Cart</a>
+           <%= link_to "Add to cart", url_for("/cart/#{prod.id}"), :remote => true, :id => "#{prod.id}" %>
+
+             <!-- <a href="/cart/<%=prod.id%>" class="text-center btn btn-primary">Add To Cart</a> -->
         </div>
          <% end %>
 
